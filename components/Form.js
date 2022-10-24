@@ -6,11 +6,36 @@ import Error from './Contact/Error';
 import { useRef, useState } from 'react';
 import { TailSpin } from 'react-loader-spinner';
 import { toast } from 'react-toastify';
+import Image from 'next/image';
+import wait from 'waait';
 
 const StyledForm = styled.form`
   width: 100%;
   max-width: 29rem;
   position: relative;
+
+  .success {
+    background-color: var(--color-neutral-100);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 7rem;
+    z-index: 9999;
+    padding: 3rem;
+    opacity: ${({ success }) => (success ? '1' : '0')};
+    transition: opacity 700ms ease;
+    pointer-events: none;
+
+    h3 {
+      color: var(--color-neutral-900);
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+
   .inner {
     display: flex;
     flex-direction: column;
@@ -22,7 +47,7 @@ const StyledForm = styled.form`
     z-index: 1;
     height: 100%;
     border-radius: var(--br);
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
     z-index: 1;
 
@@ -98,12 +123,23 @@ const StyledForm = styled.form`
       left: -6rem;
       border-radius: var(--br);
     }
+
+    .inner {
+      padding: 2rem;
+    }
   }
 `;
 
 function Form() {
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
   const formRef = useRef();
+
+  const handleButtonChange = () => {
+    if (loading) return <TailSpin height={18} width={18} color='#fff' />;
+    if (success) return 'Sent!';
+    return 'Send';
+  };
 
   const {
     register,
@@ -112,7 +148,7 @@ function Form() {
     reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = ({ email, subject, message }) => {
+  const onSubmit = async ({ email, subject, message }) => {
     setLoading(true);
     const templateParams = {
       from_email: email,
@@ -120,24 +156,24 @@ function Form() {
       message,
     };
 
-    send(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE, templateParams, process.env.NEXT_PUBLIC_EMAILJS_KEY)
-      .then(
-        (result) => {
-          setLoading(false);
-          reset();
-          toast.success('Email Sent');
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      )
-      .catch((error) => {
-        console.log(error.messsage);
-      });
+    try {
+      await send(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE, templateParams, process.env.NEXT_PUBLIC_EMAILJS_KEY);
+      setLoading(false);
+      reset();
+      setSuccess(true);
+      await wait(4500);
+      setSuccess(false);
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   return (
-    <StyledForm ref={formRef} onSubmit={handleSubmit(onSubmit)}>
+    <StyledForm success={success} ref={formRef} onSubmit={handleSubmit(onSubmit)}>
+      <div className='success'>
+        <Image src='/assets/success.svg' alt='sent' width='453' height='382' />
+        <h3>Thank you!</h3>
+      </div>
       <div className='bg-pattern-accent'></div>
       <div className='inner'>
         <div>
@@ -154,8 +190,8 @@ function Form() {
           <textarea {...register('message', { required: true })} rows={7} type='text' id='message' />
           {errors.message && <Error>Message is required</Error>}
         </div>
-        <button disabled={loading ? true : false} type='submit'>
-          <span>{loading ? <TailSpin height={18} width={18} color='#fff' /> : 'Send'}</span>
+        <button className={success ? 'bg-secondary' : null} disabled={loading ? true : false} type='submit'>
+          <span>{handleButtonChange()}</span>
         </button>
       </div>
     </StyledForm>

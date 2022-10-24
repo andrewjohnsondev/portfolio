@@ -18,7 +18,7 @@ const StyledAboutSection = styled.section`
     rotate: -45deg;
   }
   .content {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--color-neutral-200);
     display: flex;
@@ -42,13 +42,13 @@ const StyledAboutSection = styled.section`
     border-radius: var(--br);
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 0.9375rem;
     font-size: 1rem;
     font-weight: var(--fw-600);
     max-width: 35rem;
     color: var(--color-primary-200);
-    rotate: -5deg;
-    margin-top: 6rem;
+    rotate: -3deg;
+    margin-top: 4rem;
   }
 
   @media (min-width: ${config.med}) {
@@ -62,6 +62,9 @@ const StyledAboutSection = styled.section`
 
     .technologies {
       font-size: 1.25rem;
+      gap: 2rem;
+      margin-top: 6rem;
+      rotate: -5deg;
     }
   }
 `;
@@ -77,7 +80,7 @@ function index() {
             Hello! My name is <span>Andrew Johnson</span>, and I enjoy building applications for the web. I live in Nephi, Utah, and have a beautiful little family. Currently, I work at Angel Studios
             as a Release Manager.
           </p>
-          <p>Coding has become one of my passions, and I enjoy learning new technologies in my free time. Here are some technologies I’ve been working with recently:</p>
+          <p>Coding has become one of my passions, and I enjoy learning new technologies in my free time. Here are some technologies I have been working with recently:</p>
           <ul className='technologies'>
             <li>Javascript</li>
             <li>React</li>
