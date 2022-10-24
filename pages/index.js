@@ -5,6 +5,7 @@ import Projects from '../components/Projects';
 import About from '../components/About';
 import Contact from '../components/Contact';
 import styled from 'styled-components';
+import Head from 'next/head';
 const StyledHeader = styled.header`
   position: relative;
 `;
@@ -12,6 +13,9 @@ const StyledHeader = styled.header`
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Andrew Johnson || Web Developer</title>
+      </Head>
       <StyledHeader>
         <Navbar />
         <Hero />
