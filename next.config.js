@@ -1,6 +1,7 @@
 module.exports = {
   images: {
-    domains: ['res.cloudinary.com'],
+    loader: 'cloudinary',
+    path: 'https://res.cloudinary.com/dsg1cr4ug/image/upload',
   },
   compiler: {
     // ssr and displayName are configured by default

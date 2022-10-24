@@ -38,7 +38,7 @@ function index() {
             technologies={['NextJS', 'SanityCMS', 'GraphQL', 'Styled-Components', 'Stripe']}
             github='https://github.com/andrewjohnsondev/NeboBrew'
             link='https://localhost:3001'
-            image='/assets/nebobrew.png'
+            image='https://res.cloudinary.com/dsg1cr4ug/image/upload/v1666593009/Portfolio/nebobrew_a1sjle.png'
             alt='Nebo Brew Project'
           />
           <Project
@@ -49,7 +49,7 @@ function index() {
             technologies={['NextJS', 'Tailwind CSS', 'RunSignup API']}
             github='https://github.com/andrewjohnsondev/RaceInUtah'
             link='https://raceinutah.com'
-            image='/assets/raceinutah.png'
+            image='https://res.cloudinary.com/dsg1cr4ug/image/upload/v1666593006/Portfolio/RaceInUtahFull_v1cp4u.png'
             alt='Race In Utah Project'
           />
         </div>

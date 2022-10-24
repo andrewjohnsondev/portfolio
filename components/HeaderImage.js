@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledHeaderImage = styled.div`
-  background-image: url('/assets/splash.jpg');
+  background-image: url('https://res.cloudinary.com/dsg1cr4ug/image/upload/v1666593002/Portfolio/camille-couvez-H5PnIYI_1I0-unsplash_2_qzgzil.jpg');
   background-position: center;
   background-size: cover;
   height: 100%;

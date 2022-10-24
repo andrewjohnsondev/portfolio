@@ -27,9 +27,9 @@ function Project({ name, description, technologies, github, link, image, alt, is
         </div>
       </div>
       <img className='pointer' src={isContentLeft ? 'assets/right.svg' : 'assets/left.svg'} alt='' />
-      <div className='project'>
-        <Image src={image} layout='fill' objectFit='cover' alt='' />
-      </div>
+      <a href='link' className='project'>
+        <Image src={image} layout='fill' objectFit='cover' objectPosition='center top' alt='' />
+      </a>
     </StyledProject>
   );
 }

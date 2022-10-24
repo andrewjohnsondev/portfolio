@@ -78,6 +78,21 @@ const StyledProject = styled.div`
     height: 100%;
     position: relative;
     border-radius: var(--br);
+    cursor: pointer;
+
+    &:hover::before {
+      opacity: 0.5;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: var(--color-primary-400);
+      opacity: 0;
+      z-index: 99;
+      transition: opacity 300ms ease;
+    }
 
     img {
       border-radius: var(--br);
@@ -87,6 +102,7 @@ const StyledProject = styled.div`
   @media (min-width: ${config.med}) {
     grid-template-columns: 1fr 1fr;
     position: relative;
+    gap: 5rem;
 
     .pointer {
       display: block;
