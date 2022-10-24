@@ -39,7 +39,7 @@ const StyledForm = styled.form`
   .inner {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
     background-color: var(--color-neutral-100);
@@ -50,6 +50,34 @@ const StyledForm = styled.form`
     padding: 1rem;
     position: relative;
     z-index: 1;
+
+    &::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(-45deg, var(--color-accent-400) 0%, var(--color-primary-400) 100%);
+      transform: translate3d(0, 10px, 0) scale(0.95);
+      filter: blur(30px);
+      opacity: 0.5;
+      transition: background 200s ease-in-out;
+      border-radius: inherit;
+    }
+
+    &::after {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: inherit;
+      border-radius: inherit;
+    }
 
     & > * {
       width: 100%;
@@ -126,6 +154,7 @@ const StyledForm = styled.form`
 
     .inner {
       padding: 2rem;
+      gap: 2rem;
     }
   }
 `;

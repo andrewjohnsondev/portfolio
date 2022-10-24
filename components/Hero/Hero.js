@@ -31,12 +31,16 @@ const StyledHero = styled.section`
   }
 
   .button {
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 
   @media (min-width: ${config.med}) {
     h1 {
       font-size: 4.5rem;
+    }
+
+    .button {
+      margin-top: 5rem;
     }
   }
   @media (min-width: ${config.lg}) {

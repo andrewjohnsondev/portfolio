@@ -48,7 +48,8 @@ const StyledProject = styled.div`
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 1rem;
+        row-gap: 0.5rem;
+        column-gap: 1rem;
         color: var(--color-secondary-400);
         font-weight: var(--fw-700);
         font-size: 0.75rem;
@@ -152,6 +153,7 @@ const StyledProject = styled.div`
     }
 
     .content__technologies {
+      gap: 1.5rem;
       &-list {
         row-gap: 0.5rem;
       }
