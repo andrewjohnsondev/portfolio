@@ -6,6 +6,7 @@ const StyledHero = styled.section`
   min-height: 90vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 5rem;
   color: var(--color-neutral-100);
   position: relative;
@@ -17,21 +18,20 @@ const StyledHero = styled.section`
     align-items: center;
   }
 
-  .button {
-    margin-top: 6rem;
-  }
-
   h1 {
     text-transform: uppercase;
     font-size: 3.5rem;
     font-weight: var(--fw-900);
     rotate: -2deg;
     line-height: 1.2;
-    margin-top: 6rem;
 
     span {
       color: var(--color-primary-400);
     }
+  }
+
+  .button {
+    margin-top: 4rem;
   }
 
   @media (min-width: ${config.med}) {

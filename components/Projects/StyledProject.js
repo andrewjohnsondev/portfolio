@@ -80,11 +80,39 @@ const StyledProject = styled.div`
     border-radius: var(--br);
     cursor: pointer;
 
-    &:hover::before {
+    &::before {
+      content: '';
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(-45deg, var(--color-primary-400) 0%, var(--color-accent-400) 100%);
+      transform: translate3d(0, 1px, 0);
+      filter: blur(20px);
+      opacity: 0.5;
+      transition: opacity 0.3s;
+      border-radius: inherit;
+    }
+
+    &::after {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: inherit;
+      border-radius: inherit;
+    }
+
+    /* &:hover::after {
       opacity: 0.5;
     }
 
-    &::before {
+    &::after {
       content: '';
       position: absolute;
       inset: 0;
@@ -92,7 +120,7 @@ const StyledProject = styled.div`
       opacity: 0;
       z-index: 99;
       transition: opacity 300ms ease;
-    }
+    } */
 
     img {
       border-radius: var(--br);
