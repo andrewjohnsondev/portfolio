@@ -77,7 +77,7 @@ function index() {
             Hello! My name is <span>Andrew Johnson</span>, and I enjoy building applications for the web. I live in Nephi, Utah, and have a beautiful little family. Currently, I work at Angel Studios
             as a Release Manager.
           </p>
-          <p>Coding has become one of my passions, and I enjoy learning new technologies in my free time. Here are some technologies I’ve been working this recently:</p>
+          <p>Coding has become one of my passions, and I enjoy learning new technologies in my free time. Here are some technologies I’ve been working with recently:</p>
           <ul className='technologies'>
             <li>Javascript</li>
             <li>React</li>

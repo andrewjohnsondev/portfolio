@@ -72,9 +72,9 @@ function index() {
           <ul className='contact__inner-links'>
             <img className='send' src='/assets/send.svg' alt='' />
             <li className='greenHover'>
-              <a href='mailto: coderandrewjohnson@gmail.com'>
+              <a href='mailto: andyjohndev@gmail.com'>
                 <img src='/assets/email.svg' alt='email' />
-                <span>coderandrewjohnson@gmail.com</span>
+                <span>andyjohndev@gmail.com</span>
               </a>
             </li>
             <li className='greenHover'>

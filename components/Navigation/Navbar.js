@@ -3,7 +3,7 @@ import NavLink from './NavLink';
 import styled from 'styled-components';
 import { config } from '../../styles/GlobalStyles';
 import Hamburger from './Mobile/Hamburger';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useMenuInit from '../../lib/hooks/useMenuInit';
 
 const StyledNavBar = styled.nav`
@@ -58,6 +58,14 @@ const StyledNavBar = styled.nav`
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [initMenu] = useMenuInit();
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('stopScroll');
+    } else {
+      document.body.classList.remove('stopScroll');
+    }
+  }, [isOpen]);
 
   return (
     <StyledNavBar initMenu={initMenu} isOpen={isOpen} aria-label='primary' className='bg-white'>

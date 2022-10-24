@@ -105,6 +105,8 @@ select {
   font: inherit;
 }
 
+
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -136,6 +138,10 @@ select {
   padding-inline: 1rem;
   margin-inline: auto;
   width: 100%;
+}
+
+.stopScroll {
+  overflow: hidden;
 }
 
 .greenHover {
