@@ -2,44 +2,29 @@ import styled from 'styled-components';
 import { config } from '../../../styles/GlobalStyles';
 
 const StyledHamburger = styled.button`
-  border: none;
-  background-color: transparent;
-  width: 2.5rem;
   display: grid;
-  place-items: center;
-  cursor: pointer;
+  gap: 6px;
   position: relative;
+  cursor: pointer;
+  padding: 1em;
+  background-color: transparent;
+  border: none;
   z-index: 999999;
+  transition: transform 200ms ease-in-out;
+  transform: ${({ isOpen }) => (isOpen ? 'rotate(45deg)' : 'rotate(0)')};
 
-  .hamburger-wrapper {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
+  .line:first-child {
+    opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
+  }
+  .line:last-child {
+    transform: ${({ isOpen }) => (isOpen ? 'rotate(90deg) translate(-0.5em)' : 'rotate(0) translate(0)')};
   }
 
   .line {
-    display: block;
+    width: 2em;
     height: 3px;
-    width: 100%;
-    border-radius: 10px;
-    background: #fff;
-  }
-
-  .line1 {
-    transition: transform 0.4s ease-in-out;
-    transform: ${({ isOpen }) => (isOpen ? 'rotate(45deg) translate(5px, 5px)' : null)};
-  }
-
-  .line2 {
-    transition: transform 0.2s ease-in-out;
-    transform: ${({ isOpen }) => (isOpen ? 'scaleY(0)' : null)};
-  }
-
-  .line3 {
-    transition: transform 0.4s ease-in-out;
-    transform: ${({ isOpen }) => (isOpen ? 'rotate(-45deg) translate(7px, -6px)' : null)};
+    background-color: var(--color-neutral-100);
+    transition: transform 250ms ease-in-out, opacity 200ms linear;
   }
 
   @media (min-width: ${config.med}) {
@@ -50,11 +35,9 @@ const StyledHamburger = styled.button`
 function Hamburger({ isOpen, onClick }) {
   return (
     <StyledHamburger onClick={onClick} isOpen={isOpen}>
-      <div className='hamburger-wrapper'>
-        <span className='line line1'></span>
-        <span className='line line2'></span>
-        <span className='line line3'></span>
-      </div>
+      <span className='line'></span>
+      <span className='line'></span>
+      <span className='line'></span>
     </StyledHamburger>
   );
 }

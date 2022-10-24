@@ -3,7 +3,7 @@ import { config } from '../../styles/GlobalStyles';
 import ButtonLink from '../ButtonLink';
 
 const StyledHero = styled.section`
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   gap: 5rem;

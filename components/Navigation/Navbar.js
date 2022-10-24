@@ -3,8 +3,9 @@ import NavLink from './NavLink';
 import styled from 'styled-components';
 import { config } from '../../styles/GlobalStyles';
 import Hamburger from './Mobile/Hamburger';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import useMenuInit from '../../lib/hooks/useMenuInit';
+import useEventListener from '../../lib/hooks/useEventListener';
 
 const StyledNavBar = styled.nav`
   min-height: 10vh;
@@ -30,7 +31,7 @@ const StyledNavBar = styled.nav`
     z-index: 999999;
     gap: 4rem;
     list-style: none;
-    padding: 7rem 4rem;
+    padding: 7rem 0 0 3.5rem;
     margin: 0;
     transition: transform 350ms ease;
     transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(100%)')};
@@ -58,6 +59,13 @@ const StyledNavBar = styled.nav`
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [initMenu] = useMenuInit();
+  const navRef = useRef();
+  const handleLinkClick = (e) => {
+    if (e.target.dataset.link) {
+      setIsOpen(false);
+    }
+  };
+  useEventListener('click', handleLinkClick, navRef.current);
 
   useEffect(() => {
     if (isOpen) {
@@ -68,7 +76,7 @@ function Navbar() {
   }, [isOpen]);
 
   return (
-    <StyledNavBar initMenu={initMenu} isOpen={isOpen} aria-label='primary' className='bg-white'>
+    <StyledNavBar ref={navRef} initMenu={initMenu} isOpen={isOpen} aria-label='primary' className='bg-white'>
       <div className='wrapper nav'>
         <Logo />
         <ul className='flex primary'>

@@ -15,14 +15,14 @@ const StyledNavLink = styled.a`
 function NavLink({ href, src, text, alt, target }) {
   if (!src) {
     return (
-      <StyledNavLink target={target} href={href} className='greenHover'>
+      <StyledNavLink data-link target={target} href={href} className='greenHover'>
         {text}
       </StyledNavLink>
     );
   }
 
   return (
-    <StyledNavLink target={target} href={href} className='greenHover'>
+    <StyledNavLink data-link target={target} href={href} className='greenHover'>
       <img src={src} alt={alt} width='26px' height='26px' />
       <span>{text}</span>
     </StyledNavLink>
