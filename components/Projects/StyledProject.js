@@ -79,20 +79,21 @@ const StyledProject = styled.div`
     position: relative;
     border-radius: var(--br);
     cursor: pointer;
+    z-index: 1;
 
     &::before {
       content: '';
-      z-index: 1;
+      z-index: -1;
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
-      background: linear-gradient(-45deg, var(--color-primary-400) 0%, var(--color-accent-400) 100%);
-      transform: translate3d(0, 1px, 0);
-      filter: blur(20px);
+      background: linear-gradient(-45deg, var(--color-accent-400) 0%, var(--color-primary-400) 100%);
+      transform: translate3d(0, 0, 0) scale(0.95);
+      filter: blur(40px);
       opacity: 0.5;
-      transition: opacity 0.3s;
+      transition: background 200s ease-in-out;
       border-radius: inherit;
     }
 
@@ -108,19 +109,9 @@ const StyledProject = styled.div`
       border-radius: inherit;
     }
 
-    /* &:hover::after {
-      opacity: 0.5;
+    &:hover::before {
+      background: linear-gradient(-45deg, var(--color-neutral-100) 0%, var(--color-primary-400) 100%);
     }
-
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-color: var(--color-primary-400);
-      opacity: 0;
-      z-index: 99;
-      transition: opacity 300ms ease;
-    } */
 
     img {
       border-radius: var(--br);
@@ -147,8 +138,8 @@ const StyledProject = styled.div`
       img {
         z-index: 1;
       }
-      &::after {
-        content: '';
+
+      .box-decoration {
         position: absolute;
         width: 50%;
         height: 70%;
