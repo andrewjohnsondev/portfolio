@@ -171,7 +171,7 @@ function Form() {
   return (
     <StyledForm success={success} ref={formRef} onSubmit={handleSubmit(onSubmit)}>
       <div className='success'>
-        <Image src='/assets/success.svg' alt='sent' width='453' height='382' />
+        <img src='/assets/success.svg' alt='sent' />
         <h3>Thank you!</h3>
       </div>
       <div className='bg-pattern-accent'></div>

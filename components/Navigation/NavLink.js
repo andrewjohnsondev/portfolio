@@ -23,8 +23,7 @@ function NavLink({ href, src, text, alt, target }) {
 
   return (
     <StyledNavLink target={target} href={href} className='greenHover'>
-      <Image alt={alt} src={src} width='26px' height='26px' priority />
-
+      <img src={src} alt={alt} width='26px' height='26px' />
       <span>{text}</span>
     </StyledNavLink>
   );
