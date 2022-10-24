@@ -42,7 +42,7 @@ const StyledProject = styled.div`
       display: flex;
       flex-direction: column;
       padding: 1.2rem;
-      gap: 1rem;
+      gap: 1.5rem;
 
       &-list {
         display: flex;

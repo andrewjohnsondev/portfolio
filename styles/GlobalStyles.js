@@ -48,6 +48,15 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 }
 
+*:focus-visible {
+  outline: solid var(--color-secondary-400) 3px;
+  border-radius: var(--br);
+}
+
+form:focus-visible {
+  outline: solid var(--color-accent-400) 2px !important;
+}
+
 /* Remove default margin */
 body,
 h1,

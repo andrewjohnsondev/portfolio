@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import SectionTitle from '../SectionTitle';
 import Form from '../Form';
 import { config } from '../../styles/GlobalStyles';
+import sendSvg from '../../public/assets/send.svg';
+import greenLinkedinSvg from '../../public/assets/greenLinkedin.svg';
+import emailSvg from '../../public/assets/email.svg';
+import Image from 'next/image';
 
 const StyledContactSection = styled.section`
   position: relative;
@@ -70,16 +74,18 @@ function index() {
         <SectionTitle>Contact</SectionTitle>
         <div className='contact__inner'>
           <ul className='contact__inner-links'>
-            <img className='send' src='/assets/send.svg' alt='' />
+            <div className='send'>
+              <Image src={sendSvg} alt='' />
+            </div>
             <li className='greenHover'>
               <a href='mailto: andyjohndev@gmail.com'>
-                <img src='/assets/email.svg' alt='email' />
+                <Image src={emailSvg} alt='email' />
                 <span>andyjohndev@gmail.com</span>
               </a>
             </li>
             <li className='greenHover'>
               <a href='https://www.linkedin.com/in/andrew-johnson-a0b853229/' target='_blank' rel='noreferrer'>
-                <img src='/assets/greenLinkedin.svg' alt='linkedin' />
+                <Image src={greenLinkedinSvg} alt='linkedin' />
                 <span>LinkedIn</span>
               </a>
             </li>

@@ -20,7 +20,7 @@ const StyledNavBar = styled.nav`
   }
 
   .primary {
-    display: ${({ initMenu }) => (initMenu ? 'flex' : 'none')};
+    display: none;
     flex-direction: column;
     background-color: var(--color-neutral-500);
     position: fixed;
@@ -35,6 +35,10 @@ const StyledNavBar = styled.nav`
     margin: 0;
     transition: transform 350ms ease;
     transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(100%)')};
+  }
+
+  .flex {
+    display: flex;
   }
 
   @media (min-width: ${config.med}) {
@@ -76,7 +80,7 @@ function Navbar() {
   }, [isOpen]);
 
   return (
-    <StyledNavBar ref={navRef} initMenu={initMenu} isOpen={isOpen} aria-label='primary' className='bg-white'>
+    <StyledNavBar ref={navRef} isOpen={isOpen} aria-label='primary' className={`bg-white ${initMenu ? 'flex' : null}`}>
       <div className='wrapper nav'>
         <Logo />
         <ul className='flex primary'>

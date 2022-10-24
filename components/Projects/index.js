@@ -3,6 +3,9 @@ import SectionTitle from '../SectionTitle';
 import Project from './Project';
 import { config } from '../../styles/GlobalStyles';
 
+import nebobrew from '/public/assets/nebobrew.png';
+import raceinutah from '/public/assets/raceinutah.png';
+
 const StyledProjectSection = styled.section`
   position: relative;
 
@@ -32,24 +35,22 @@ function index() {
         <div className='project-layout'>
           <Project
             isContentLeft={true}
-            className='image-shape-right'
             name='Nebo Brew'
             description='Full stack coffee E-commerce store built from scratch!'
             technologies={['NextJS', 'SanityCMS', 'GraphQL', 'Styled-Components', 'Stripe']}
             github='https://github.com/andrewjohnsondev/NeboBrew'
             link='https://localhost:3001'
-            image='/v1666593009/Portfolio/nebobrew_a1sjle.png'
+            image={nebobrew}
             alt='Nebo Brew Project'
           />
           <Project
             isContentLeft={false}
-            className='image-shape-left'
             name='RaceInUtah'
             description='A web app that lists upcoming race events happening in Utah.'
             technologies={['NextJS', 'Tailwind CSS', 'RunSignup API']}
             github='https://github.com/andrewjohnsondev/RaceInUtah'
             link='https://raceinutah.com'
-            image='/v1666593006/Portfolio/RaceInUtahFull_v1cp4u.png'
+            image={raceinutah}
             alt='Race In Utah Project'
           />
         </div>

@@ -1,16 +1,19 @@
 import styled from 'styled-components';
 import { config } from '../../styles/GlobalStyles';
 import ButtonLink from '../ButtonLink';
+import Image from 'next/image';
+import scribbleImage from '../../public/assets/scribble.svg';
+import chevronImage from '../../public/assets/chevron.svg';
 
 const StyledHero = styled.section`
   min-height: 90vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 3rem;
   gap: 5rem;
   color: var(--color-neutral-100);
   position: relative;
-  z-index: 99;
+  z-index: 9;
 
   .hero {
     display: flex;
@@ -35,6 +38,8 @@ const StyledHero = styled.section`
   }
 
   @media (min-width: ${config.med}) {
+    align-items: center;
+    margin-top: 0;
     h1 {
       font-size: 4.5rem;
     }
@@ -62,9 +67,9 @@ function Hero() {
           <br />
           <span>WEB</span> DEVELOPER
         </h1>
-        <img src='/assets/scribble.svg' alt='' />
+        <Image src={scribbleImage} alt='' priority />
         <ButtonLink className='button' href='#projects'>
-          <img src='/assets/chevron.svg' alt='' />
+          <Image src={chevronImage} alt='' priority />
         </ButtonLink>
       </div>
     </StyledHero>

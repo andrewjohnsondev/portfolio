@@ -1,5 +1,9 @@
 import Image from 'next/image';
 import StyledProject from './StyledProject';
+import linkSvg from '../../public/assets/link.svg';
+import githubSvg from '../../public/assets/github.svg';
+import leftSvg from '../../public/assets/left.svg';
+import rightSvg from '../../public/assets/right.svg';
 
 function Project({ name, description, technologies, github, link, image, alt, isContentLeft }) {
   return (
@@ -18,18 +22,20 @@ function Project({ name, description, technologies, github, link, image, alt, is
           </div>
           <div className='content__technologies-links'>
             <a href={github}>
-              <img src='/assets/github.svg' alt='github' />
+              <Image src={githubSvg} alt='github' />
             </a>
             <a href={link}>
-              <img src='/assets/link.svg' alt='project' />
+              <Image src={linkSvg} alt='project' />
             </a>
           </div>
         </div>
       </div>
-      <img className='pointer' src={isContentLeft ? 'assets/right.svg' : 'assets/left.svg'} alt='' />
+      <div className='pointer'>
+        <Image src={isContentLeft ? rightSvg : leftSvg} alt='' />
+      </div>
       <a href='link' className='project'>
         <span className='box-decoration'></span>
-        <Image src={image} layout='fill' objectFit='cover' objectPosition='center top' alt='' />
+        <Image src={image} layout='fill' objectFit='cover' objectPosition='center top' alt={alt} />
       </a>
     </StyledProject>
   );

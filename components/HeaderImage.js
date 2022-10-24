@@ -1,9 +1,8 @@
+import Image from 'next/image';
 import styled from 'styled-components';
+import colorSplash from '../public/assets/color-splash.jpg';
 
 const StyledHeaderImage = styled.div`
-  background-image: url('https://res.cloudinary.com/dsg1cr4ug/image/upload/v1666593002/Portfolio/camille-couvez-H5PnIYI_1I0-unsplash_2_qzgzil.jpg');
-  background-position: center;
-  background-size: cover;
   height: 100%;
   right: 0;
   top: 0;
@@ -11,9 +10,14 @@ const StyledHeaderImage = styled.div`
   position: absolute;
   border-radius: var(--br);
 
+  .image {
+    width: 100%;
+    height: 100%;
+  }
+
   .overlay {
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 100%;
     position: relative;
@@ -23,6 +27,7 @@ const StyledHeaderImage = styled.div`
 function HeaderImage() {
   return (
     <StyledHeaderImage>
+      <Image className='image' src={colorSplash} priority alt='' layout='fill' objectPosition='center' objectFit='cover' />
       <div className='overlay'></div>
     </StyledHeaderImage>
   );

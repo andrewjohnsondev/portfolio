@@ -7,6 +7,7 @@ import { useRef, useState } from 'react';
 import { TailSpin } from 'react-loader-spinner';
 import { toast } from 'react-toastify';
 import Image from 'next/image';
+import successSvg from '../public/assets/success.svg';
 import wait from 'waait';
 
 const StyledForm = styled.form`
@@ -39,7 +40,7 @@ const StyledForm = styled.form`
   .inner {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
     justify-content: center;
     background-color: var(--color-neutral-100);
@@ -47,7 +48,7 @@ const StyledForm = styled.form`
     z-index: 1;
     height: 100%;
     border-radius: var(--br);
-    padding: 1rem;
+    padding: 1.25rem;
     position: relative;
     z-index: 1;
 
@@ -200,7 +201,7 @@ function Form() {
   return (
     <StyledForm success={success} ref={formRef} onSubmit={handleSubmit(onSubmit)}>
       <div className='success'>
-        <img src='/assets/success.svg' alt='sent' />
+        <Image src={successSvg} alt='' />
         <h3>Thank you!</h3>
       </div>
       <div className='bg-pattern-accent'></div>
