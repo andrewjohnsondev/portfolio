@@ -24,7 +24,7 @@ const StyledHamburger = styled.button`
     width: 2em;
     height: 3px;
     background-color: var(--color-neutral-100);
-    transition: transform 250ms ease-in-out, opacity 200ms linear;
+    transition: transform 250ms ease-in-out, opacity 100ms linear;
   }
 
   @media (min-width: ${config.med}) {

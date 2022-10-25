@@ -80,10 +80,10 @@ function Navbar() {
   }, [isOpen]);
 
   return (
-    <StyledNavBar ref={navRef} isOpen={isOpen} aria-label='primary' className={`bg-white ${initMenu ? 'flex' : null}`}>
+    <StyledNavBar ref={navRef} isOpen={isOpen} aria-label='primary' className={`bg-white`}>
       <div className='wrapper nav'>
         <Logo />
-        <ul className='flex primary'>
+        <ul className={`${initMenu ? 'flex' : null} primary`}>
           <li>
             <NavLink text='Github' href='https://github.com/andrewjohnsondev' src='/assets/github.svg' alt='' target='_blank' />
           </li>
