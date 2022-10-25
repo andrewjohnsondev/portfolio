@@ -33,9 +33,9 @@ function Project({ name, description, technologies, github, link, image, alt, is
       <div className='pointer'>
         <Image src={isContentLeft ? rightSvg : leftSvg} alt='' />
       </div>
-      <a href='link' className='project'>
-        <span className='box-decoration'></span>
-        <Image src={image} layout='fill' objectFit='cover' objectPosition='center top' alt={alt} />
+      <a href={link} className='project' target='_blank' rel='noreferrer'>
+        <span className='box-decoration bg-pattern-accent'></span>
+        <Image src={image} layout='fill' objectFit='contain' alt={alt} />
       </a>
     </StyledProject>
   );

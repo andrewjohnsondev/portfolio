@@ -140,7 +140,7 @@ select {
 }
 
 .wrapper {
-  max-width: 70rem;
+  max-width: 71rem;
   padding-inline: 1rem;
   margin-inline: auto;
   width: 100%;

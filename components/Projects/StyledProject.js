@@ -67,7 +67,6 @@ const StyledProject = styled.div`
           }
         }
         img {
-          width: 1.75rem;
           transition: filter 150ms linear;
         }
       }
@@ -91,9 +90,9 @@ const StyledProject = styled.div`
       bottom: 0;
       left: 0;
       background: linear-gradient(-45deg, var(--color-accent-400) 0%, var(--color-primary-400) 100%);
-      transform: translate3d(0, 10px, 0) scale(0.95);
+      transform: translate3d(0, 10px, 0) scale(0.85);
       filter: blur(40px);
-      opacity: 0.7;
+      opacity: 0.5;
       transition: background 200s ease-in-out;
       border-radius: inherit;
     }
@@ -142,14 +141,13 @@ const StyledProject = styled.div`
       }
 
       .box-decoration {
+        background-color: var(--color-accent-700);
         position: absolute;
         width: 50%;
         height: 70%;
-        border-radius: var(--br);
-        border: solid 5px var(--color-neutral-500);
-        top: -2rem;
-        left: ${({ isContentLeft }) => (isContentLeft ? null : '-2rem')};
-        right: ${({ isContentLeft }) => (isContentLeft ? '-2rem' : null)};
+        top: -2.5rem;
+        left: ${({ isContentLeft }) => (isContentLeft ? null : '-1rem')};
+        right: ${({ isContentLeft }) => (isContentLeft ? '-1rem' : null)};
       }
     }
 
@@ -162,6 +160,12 @@ const StyledProject = styled.div`
 
     .project {
       position: relative;
+
+      &::before {
+        background: linear-gradient(-45deg, var(--color-accent-400) 0%, var(--color-primary-400) 100%);
+        transform: translate3d(0, 10px, 0) scale(0.85);
+        opacity: 0.7;
+      }
     }
   }
 

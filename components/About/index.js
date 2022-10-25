@@ -60,7 +60,7 @@ const StyledAboutSection = styled.section`
   .graph {
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 8%;
   }
   .javascript {
     position: absolute;
@@ -69,13 +69,13 @@ const StyledAboutSection = styled.section`
   }
   .react {
     position: absolute;
-    left: 30%;
-    bottom: -35%;
+    left: 20%;
+    bottom: -30%;
   }
   .nextjs {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 10%;
   }
 
   @media (min-width: ${config.med}) {
@@ -92,6 +92,19 @@ const StyledAboutSection = styled.section`
       gap: 2rem;
       margin-top: 6rem;
       rotate: -5deg;
+    }
+
+    .nextjs {
+      bottom: 0;
+    }
+
+    .graph {
+      bottom: 0;
+    }
+
+    .react {
+      bottom: -35%;
+      left: 30%;
     }
   }
 `;
