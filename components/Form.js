@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import Image from 'next/image';
 import successSvg from '../public/assets/success.svg';
 import wait from 'waait';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const StyledForm = styled.form`
   width: 100%;
@@ -17,6 +18,7 @@ const StyledForm = styled.form`
 
   .success {
     background-color: var(--color-neutral-100);
+    flex-direction: column;
     position: absolute;
     top: 0;
     left: 0;
@@ -24,7 +26,6 @@ const StyledForm = styled.form`
     bottom: 7rem;
     z-index: 9999;
     padding: 3rem;
-    opacity: ${({ success }) => (success ? '1' : '0')};
     transition: opacity 700ms ease;
     pointer-events: none;
 
@@ -160,6 +161,11 @@ const StyledForm = styled.form`
   }
 `;
 
+const variants = {
+  open: { opacity: '1' },
+  closed: { opacity: '0' },
+};
+
 function Form() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -200,10 +206,12 @@ function Form() {
 
   return (
     <StyledForm success={success} ref={formRef} onSubmit={handleSubmit(onSubmit)}>
-      <div className='success'>
-        <Image src={successSvg} alt='' />
-        <h3>Thank you!</h3>
-      </div>
+      <AnimatePresence>
+        <motion.div className='success' key='success' animate={success ? 'open' : 'closed'} initial={{ display: 'flex', opacity: 0 }} variants={variants} exit={{ opacity: '1', display: 'none' }}>
+          <Image src={successSvg} alt='' />
+          <h3>Thank you!</h3>
+        </motion.div>
+      </AnimatePresence>
       <div className='bg-pattern-accent'></div>
       <div className='inner'>
         <div>
