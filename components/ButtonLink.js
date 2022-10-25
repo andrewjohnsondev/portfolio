@@ -17,7 +17,7 @@ const ButtonLink = styled.a`
   cursor: pointer;
   transition: background-color 200ms ease;
 
-  img {
+  img[data-animate] {
     animation: upDown 450ms ease-in-out infinite alternate;
   }
 

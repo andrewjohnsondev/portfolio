@@ -4,6 +4,7 @@ import ButtonLink from '../ButtonLink';
 import Image from 'next/image';
 import scribbleImage from '../../public/assets/scribble.svg';
 import chevronImage from '../../public/assets/chevron.svg';
+import projectSvg from '../../public/assets/projects.svg';
 
 const StyledHero = styled.section`
   min-height: 90vh;
@@ -35,6 +36,13 @@ const StyledHero = styled.section`
 
   .button {
     margin-top: 3rem;
+    position: relative;
+  }
+
+  .projects {
+    position: absolute;
+    bottom: 10%;
+    left: -200%;
   }
 
   @media (min-width: ${config.med}) {
@@ -68,8 +76,13 @@ function Hero() {
           <span>WEB</span> DEVELOPER
         </h1>
         <Image src={scribbleImage} alt='' priority />
+
         <ButtonLink className='button' href='#projects'>
-          <Image src={chevronImage} alt='' priority />
+          <div className='projects'>
+            <Image src={projectSvg} alt='' />
+          </div>
+
+          <Image data-animate src={chevronImage} alt='' priority />
         </ButtonLink>
       </div>
     </StyledHero>
