@@ -51,7 +51,7 @@ const StyledHeaderImage = styled.div`
 function HeaderImage() {
   const { scrollY } = useScroll();
 
-  const scale = useTransform(scrollY, [0, 400], [1, 2.5]);
+  const scale = useTransform(scrollY, [0, 400], [1, 2]);
 
   useEffect(() => {
     return scrollY.onChange((latest) => {});
