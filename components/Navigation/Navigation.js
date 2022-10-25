@@ -27,16 +27,16 @@ function Navigation() {
   return (
     <StyledNavigation>
       <li>
-        <NavLink text='Github' href='https://github.com/andrewjohnsondev' src='/assets/github.svg' alt='' target='_blank' />
-      </li>
-      <li>
-        <NavLink text='LinkedIn' href='https://www.linkedin.com/in/andrew-johnson-a0b853229/' src='/assets/linkedin.svg' alt='' target='_blank' />
-      </li>
-      <li>
         <NavLink text='Projects' href='#projects' />
       </li>
       <li>
         <NavLink text='Contact' href='#contact' />
+      </li>
+      <li>
+        <NavLink text='Github' href='https://github.com/andrewjohnsondev' src='/assets/github.svg' alt='' target='_blank' />
+      </li>
+      <li>
+        <NavLink text='LinkedIn' href='https://www.linkedin.com/in/andrew-johnson-a0b853229/' src='/assets/linkedin.svg' alt='' target='_blank' />
       </li>
     </StyledNavigation>
   );

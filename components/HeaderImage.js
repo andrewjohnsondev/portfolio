@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import gas from '../public/assets/gas.png';
-import { useScroll, useTransform, motion, useAnimationControls } from 'framer-motion';
+import { useScroll, useTransform, motion } from 'framer-motion';
 import { useEffect } from 'react';
 
 const StyledHeaderImage = styled.div`

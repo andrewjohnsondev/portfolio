@@ -65,17 +65,50 @@ const StyledAboutSection = styled.section`
   .javascript {
     position: absolute;
     left: 70%;
-    bottom: -30%;
+    bottom: -25%;
   }
   .react {
     position: absolute;
     left: 20%;
-    bottom: -30%;
+    bottom: -25%;
   }
   .nextjs {
     position: absolute;
     right: 0;
     bottom: 10%;
+  }
+
+  .react,
+  .nextjs {
+    z-index: 1;
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(-45deg, var(--color-primary-200) 0%, var(--color-primary-400) 100%);
+      transform: translate3d(0, 0, 0) scale(0.85);
+      filter: blur(40px);
+      opacity: 0.15;
+      z-index: -1;
+    }
+  }
+  .graph,
+  .javascript {
+    z-index: 1;
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(-45deg, var(--color-primary-400) 0%, var(--color-secondary-400) 100%);
+      transform: translate3d(0, 0, 0) scale(0.85);
+      filter: blur(40px);
+      opacity: 0.15;
+      z-index: -1;
+    }
   }
 
   @media (min-width: ${config.med}) {
@@ -95,16 +128,16 @@ const StyledAboutSection = styled.section`
     }
 
     .nextjs {
-      bottom: 0;
+      bottom: 10%;
     }
 
     .graph {
-      bottom: 0;
+      bottom: 10%;
     }
 
     .react {
-      bottom: -35%;
-      left: 30%;
+      bottom: -25%;
+      left: 20%;
     }
   }
 `;

@@ -105,7 +105,7 @@ const StyledForm = styled.form`
     color: var(--color-neutral-300);
 
     &:focus-within {
-      outline: var(--color-accent-400) solid 1px;
+      outline: var(--color-primary-400) solid 2px;
     }
   }
 
