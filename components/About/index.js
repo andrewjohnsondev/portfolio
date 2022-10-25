@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import SectionTitle from '../SectionTitle';
 import { config } from '../../styles/GlobalStyles';
+import graphqlSvg from '../../public/assets/graphql.svg';
+import javascriptSvg from '../../public/assets/javascript.svg';
+import reactSvg from '../../public/assets/react.svg';
+import nextjsSvg from '../../public/assets/nextjs.svg';
+import Image from 'next/image';
+import React from 'react';
 
 const StyledAboutSection = styled.section`
   .content-wrapper {
@@ -51,6 +57,27 @@ const StyledAboutSection = styled.section`
     margin-top: 4rem;
   }
 
+  .graph {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .javascript {
+    position: absolute;
+    left: 70%;
+    bottom: -30%;
+  }
+  .react {
+    position: absolute;
+    left: 30%;
+    bottom: -35%;
+  }
+  .nextjs {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
   @media (min-width: ${config.med}) {
     .hi {
       display: block;
@@ -87,6 +114,18 @@ function index() {
             <li>NextJS</li>
             <li>GraphQL</li>
           </ul>
+        </div>
+        <div className='graph'>
+          <Image src={graphqlSvg} alt='' />
+        </div>
+        <div className='javascript'>
+          <Image src={javascriptSvg} alt='' />
+        </div>
+        <div className='react'>
+          <Image src={reactSvg} alt='' />
+        </div>
+        <div className='nextjs'>
+          <Image src={nextjsSvg} alt='' />
         </div>
       </div>
     </StyledAboutSection>

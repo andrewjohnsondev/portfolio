@@ -53,9 +53,6 @@ const GlobalStyles = createGlobalStyle`
   border-radius: var(--br);
 }
 
-form:focus-visible {
-  outline: solid var(--color-accent-400) 2px !important;
-}
 
 /* Remove default margin */
 body,
@@ -171,6 +168,56 @@ select {
 
 .bg-secondary {
   background-color: var(--color-secondary-400) !important;
+}
+
+.fade-in {
+  animation: fade-in 300ms ease-in-out forwards;
+}
+.fade-out {
+  animation: fade-out 300ms ease-in-out forwards;
+}
+.slide-in {
+  animation: slide-in 300ms ease-in-out forwards;
+}
+.slide-out {
+  animation: slide-out 300ms ease-in-out forwards;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slide-out {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100);
+  }
 }
 
 .bg-pattern-accent {

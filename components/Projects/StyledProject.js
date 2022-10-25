@@ -3,7 +3,7 @@ import { config } from '../../styles/GlobalStyles';
 const StyledProject = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: 1fr;
+  grid-template-rows: 1fr 25rem;
   gap: 2rem;
 
   .pointer {
@@ -91,9 +91,9 @@ const StyledProject = styled.div`
       bottom: 0;
       left: 0;
       background: linear-gradient(-45deg, var(--color-accent-400) 0%, var(--color-primary-400) 100%);
-      transform: translate3d(0, 0, 0) scale(0.95);
+      transform: translate3d(0, 10px, 0) scale(0.95);
       filter: blur(40px);
-      opacity: 0.5;
+      opacity: 0.7;
       transition: background 200s ease-in-out;
       border-radius: inherit;
     }
@@ -121,6 +121,7 @@ const StyledProject = styled.div`
 
   @media (min-width: ${config.med}) {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     position: relative;
     gap: 5rem;
 
