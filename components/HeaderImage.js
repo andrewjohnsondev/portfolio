@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import colorSplash from '../public/assets/color-splash.jpg';
+import gas from '../public/assets/gas.png';
+import { useScroll, useTransform, motion, useAnimationControls } from 'framer-motion';
+import { useEffect } from 'react';
 
 const StyledHeaderImage = styled.div`
   height: 100%;
@@ -9,25 +11,57 @@ const StyledHeaderImage = styled.div`
   width: 50%;
   position: absolute;
   border-radius: var(--br);
-
-  .image {
-    width: 100%;
-    height: 100%;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #ff9966; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff9966, #ff5e62); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fe8d8c, #ff5f5d);
   }
 
-  .overlay {
+  &::after {
+    content: '';
+    position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 100%;
+    z-index: 1;
+  }
+
+  .image {
+    width: 100%;
+    opacity: 1;
+    height: 100%;
     position: relative;
+  }
+
+  .overlay {
+    inset: 0;
+    background: rgba(0, 0, 0, 1);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 99999;
   }
 `;
 
 function HeaderImage() {
+  const { scrollY } = useScroll();
+
+  const scale = useTransform(scrollY, [0, 400], [1, 2.5]);
+
+  useEffect(() => {
+    return scrollY.onChange((latest) => {});
+  });
+
   return (
     <StyledHeaderImage>
-      <Image className='image' src={colorSplash} priority alt='' layout='fill' objectPosition='center' objectFit='cover' />
+      <motion.div className='image' style={{ scale }}>
+        <Image src={gas} layout='fill' objectFit='cover' alt='' />
+      </motion.div>
       <div className='overlay'></div>
     </StyledHeaderImage>
   );
