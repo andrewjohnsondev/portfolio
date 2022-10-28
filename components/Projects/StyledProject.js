@@ -49,7 +49,7 @@ const StyledProject = styled.div`
         flex-wrap: wrap;
         align-items: center;
         row-gap: 0.5rem;
-        column-gap: 1rem;
+        column-gap: 1.25rem;
         color: var(--color-secondary-400);
         font-weight: var(--fw-700);
         font-size: 0.75rem;

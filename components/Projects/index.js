@@ -39,7 +39,7 @@ function index() {
             isContentLeft={true}
             name='Nebo Brew'
             description='Full stack e-commerce store built from scratch!'
-            technologies={['NextJS', 'SanityCMS', 'GraphQL', 'Styled-Components', 'Stripe']}
+            technologies={['NextJS', 'SanityCMS', 'GraphQL', 'Firebase', 'Stripe', 'Styled-Components']}
             github='https://github.com/andrewjohnsondev/NeboBrew'
             link='https://nebobrew.vercel.app'
             image={nebobrew}
