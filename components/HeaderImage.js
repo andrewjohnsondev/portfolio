@@ -25,7 +25,7 @@ const StyledHeaderImage = styled.div`
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -36,15 +36,6 @@ const StyledHeaderImage = styled.div`
     opacity: 1;
     height: 100%;
     position: relative;
-  }
-
-  .overlay {
-    inset: 0;
-    background: rgba(0, 0, 0, 1);
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 99999;
   }
 `;
 
@@ -60,9 +51,8 @@ function HeaderImage() {
   return (
     <StyledHeaderImage>
       <motion.div className='image' style={{ scale }}>
-        <Image src={gas} layout='fill' objectFit='cover' alt='' />
+        <Image priority src={gas} layout='fill' objectFit='cover' alt='' />
       </motion.div>
-      <div className='overlay'></div>
     </StyledHeaderImage>
   );
 }

@@ -36,10 +36,10 @@ function index() {
           <Project
             isContentLeft={true}
             name='Nebo Brew'
-            description='Full stack coffee E-commerce store built from scratch!'
+            description='Full stack e-commerce store built from scratch!'
             technologies={['NextJS', 'SanityCMS', 'GraphQL', 'Styled-Components', 'Stripe']}
             github='https://github.com/andrewjohnsondev/NeboBrew'
-            link='https://localhost:3001'
+            link='https://nebobrew.vercel.app'
             image={nebobrew}
             alt='Nebo Brew Project'
           />

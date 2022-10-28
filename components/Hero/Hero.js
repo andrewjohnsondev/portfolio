@@ -24,7 +24,7 @@ const StyledHero = styled.section`
 
   h1 {
     text-transform: uppercase;
-    font-size: 3.5rem;
+    font-size: clamp(3rem, 5.2vw + 1rem, 5.2rem);
     font-weight: var(--fw-900);
     rotate: -2deg;
     line-height: 1.2;
@@ -48,18 +48,9 @@ const StyledHero = styled.section`
   @media (min-width: ${config.med}) {
     align-items: center;
     margin-top: 0;
-    h1 {
-      font-size: 4.5rem;
-    }
 
     .button {
       margin-top: 5rem;
-    }
-  }
-  @media (min-width: ${config.lg}) {
-    h1 {
-      font-size: 5.7rem;
-      margin-left: 2rem;
     }
   }
 `;
@@ -73,7 +64,7 @@ function Hero() {
           <br />
           I&apos;M ANDREW
           <br />
-          <span>WEB</span> DEVELOPER
+          <span>FRONT-END</span> DEVELOPER
         </h1>
         <Image src={scribbleImage} alt='' priority />
 

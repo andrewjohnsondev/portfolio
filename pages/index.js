@@ -14,7 +14,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Andrew Johnson || Web Developer</title>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+        <title>Andrew Johnson || Front-End Developer</title>
       </Head>
       <StyledHeader>
         <Navbar />

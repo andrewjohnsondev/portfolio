@@ -21,10 +21,10 @@ function Project({ name, description, technologies, github, link, image, alt, is
             ))}
           </div>
           <div className='content__technologies-links'>
-            <a href={github}>
+            <a target='_blank' href={github} rel='noreferrer'>
               <Image src={githubSvg} alt='github' />
             </a>
-            <a href={link}>
+            <a target='_blank' href={link} rel='noreferrer'>
               <Image src={linkSvg} alt='project' />
             </a>
           </div>
