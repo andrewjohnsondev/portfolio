@@ -22,7 +22,6 @@ const StyledNavBar = styled.nav`
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [initMenu] = useMenuInit();
   const navRef = useRef();
   const handleLinkClick = (e) => {
     if (e.target.dataset.link) {
@@ -44,7 +43,7 @@ function Navbar() {
       <div className='wrapper nav'>
         <Logo />
         <Navigation />
-        <MobileNavigation isOpen={isOpen} />
+        <MobileNavigation isOpen={isOpen} setIsOpen={setIsOpen} />
         <Hamburger onClick={() => setIsOpen((state) => !state)} isOpen={isOpen} />
       </div>
     </StyledNavBar>

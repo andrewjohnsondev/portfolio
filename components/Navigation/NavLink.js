@@ -34,17 +34,17 @@ const StyledScrollLink = styled(Link)`
   cursor: pointer;
 `;
 
-function NavLink({ href, src, text, target }) {
+function NavLink({ href, src, text, target, onClick }) {
   if (!src) {
     return (
-      <StyledScrollLink className='greenHover' to={href} spy={true} smooth={true} offset={50} duration={500}>
+      <StyledScrollLink onClick={onClick} className='greenHover' to={href} spy={true} smooth={true} offset={50} duration={500}>
         {text}
       </StyledScrollLink>
     );
   }
 
   return (
-    <StyledNavLink data-link target={target} href={href} className='greenHover'>
+    <StyledNavLink onClick={onClick} data-link target={target} href={href} className='greenHover'>
       {src === 'github' && (
         <svg width='30' height='30' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <g clip-path='url(#clip0_15_761)'>

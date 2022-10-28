@@ -26,7 +26,7 @@ const variants = {
   closed: { x: '100%' },
 };
 
-function MobileNavigation({ isOpen }) {
+function MobileNavigation({ isOpen, setIsOpen }) {
   const [andrew, setSet] = useState(null);
   useEffect(() => {
     setSet(true);
@@ -36,16 +36,16 @@ function MobileNavigation({ isOpen }) {
       <AnimatePresence>
         <motion.ul key='mobileNav' animate={isOpen ? 'open' : 'closed'} initial={{ display: 'flex', opacity: 0 }} variants={variants} exit={{ opacity: '1', display: 'none' }}>
           <li>
-            <NavLink text='Projects' href='#projects' />
+            <NavLink onClick={() => setIsOpen(false)} text='Projects' href='projects' />
           </li>
           <li>
-            <NavLink text='Contact' href='#contact' />
+            <NavLink onClick={() => setIsOpen(false)} text='Contact' href='contact' />
           </li>
           <li>
-            <NavLink text='Github' href='https://github.com/andrewjohnsondev' src='/assets/github.svg' alt='' target='_blank' />
+            <NavLink onClick={() => setIsOpen(false)} text='Github' href='https://github.com/andrewjohnsondev' src='/assets/github.svg' alt='' target='_blank' />
           </li>
           <li>
-            <NavLink text='LinkedIn' href='https://www.linkedin.com/in/andrew-johnson-a0b853229/' src='/assets/linkedin.svg' alt='' target='_blank' />
+            <NavLink onClick={() => setIsOpen(false)} text='LinkedIn' href='https://www.linkedin.com/in/andrew-johnson-a0b853229/' src='/assets/linkedin.svg' alt='' target='_blank' />
           </li>
         </motion.ul>
       </AnimatePresence>

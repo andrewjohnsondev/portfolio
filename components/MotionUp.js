@@ -16,7 +16,7 @@ const variants = {
 
 function MotionUp({ className, children }) {
   return (
-    <motion.div initial='offscreen' whileInView='onscreen' variants={variants} viewport={{ once: true, amount: 0.3 }} className={className}>
+    <motion.div initial='offscreen' whileInView='onscreen' variants={variants} viewport={{ once: true, amount: 0.2 }} className={className}>
       {children}
     </motion.div>
   );
