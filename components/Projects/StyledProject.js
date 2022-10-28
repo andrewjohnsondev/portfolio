@@ -127,7 +127,7 @@ const StyledProject = styled.div`
     .pointer {
       display: block;
       position: absolute;
-      top: -50%;
+      top: -40%;
       left: ${({ isContentLeft }) => (isContentLeft ? '30%' : null)};
       right: ${({ isContentLeft }) => (isContentLeft ? null : '30%')};
       rotate: ${({ isContentLeft }) => (isContentLeft ? '3deg' : '-3deg')};

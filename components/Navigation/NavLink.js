@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
 
 const StyledNavLink = styled.a`
   display: flex;
@@ -22,12 +22,24 @@ const StyledNavLink = styled.a`
   }
 `;
 
+const StyledScrollLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: var(--fw-700);
+  color: var(--color-neutral-100);
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+`;
+
 function NavLink({ href, src, text, target }) {
   if (!src) {
     return (
-      <StyledNavLink data-link target={target} href={href} className='greenHover'>
+      <StyledScrollLink className='greenHover' to={href} spy={true} smooth={true} offset={50} duration={500}>
         {text}
-      </StyledNavLink>
+      </StyledScrollLink>
     );
   }
 

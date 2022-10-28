@@ -27,9 +27,6 @@ const GlobalStyles = createGlobalStyle`
   --color-neutral-900: #242323;
 
 
-
-
-
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;

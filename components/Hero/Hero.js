@@ -68,7 +68,7 @@ function Hero() {
         </h1>
         <Image src={scribbleImage} alt='' priority />
 
-        <ButtonLink className='button' href='#projects'>
+        <ButtonLink className='button' to='projects' spy={true} smooth={true} offset={50} duration={500}>
           <div className='projects'>
             <Image src={projectSvg} alt='' />
           </div>

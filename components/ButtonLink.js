@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
 
-const ButtonLink = styled.a`
+const ButtonLink = styled(Link)`
   background-color: white;
   border-radius: 100%;
   aspect-ratio: 1;

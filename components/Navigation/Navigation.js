@@ -27,10 +27,10 @@ function Navigation() {
   return (
     <StyledNavigation>
       <li>
-        <NavLink text='Projects' href='#projects' />
+        <NavLink text='Projects' href='projects' />
       </li>
       <li>
-        <NavLink text='Contact' href='#contact' />
+        <NavLink text='Contact' href='contact' />
       </li>
       <li>
         <NavLink text='Github' href='https://github.com/andrewjohnsondev' src='github' alt='' target='_blank' />

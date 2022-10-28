@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import SectionTitle from '../SectionTitle';
 import Project from './Project';
 import { config } from '../../styles/GlobalStyles';
-
 import nebobrew from '/public/assets/nebobrew.png';
 import raceinutah from '/public/assets/raceinutah.png';
+import MotionUp from '../MotionUp';
 
 const StyledProjectSection = styled.section`
   position: relative;
@@ -31,7 +31,9 @@ function index() {
   return (
     <StyledProjectSection id='projects' className='section'>
       <div className='wrapper inner'>
-        <SectionTitle>My Projects</SectionTitle>
+        <MotionUp>
+          <SectionTitle>My Projects</SectionTitle>
+        </MotionUp>
         <div className='project-layout'>
           <Project
             isContentLeft={true}

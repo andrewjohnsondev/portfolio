@@ -6,6 +6,7 @@ import sendSvg from '../../public/assets/send.svg';
 import greenLinkedinSvg from '../../public/assets/greenLinkedin.svg';
 import emailSvg from '../../public/assets/email.svg';
 import Image from 'next/image';
+import MotionUp from '../MotionUp';
 
 const StyledContactSection = styled.section`
   position: relative;
@@ -71,8 +72,10 @@ function index() {
   return (
     <StyledContactSection id='contact' className='section'>
       <div className='wrapper'>
-        <SectionTitle>Contact</SectionTitle>
-        <div className='contact__inner'>
+        <MotionUp>
+          <SectionTitle>Contact</SectionTitle>
+        </MotionUp>
+        <MotionUp className='contact__inner'>
           <ul className='contact__inner-links'>
             <div className='send'>
               <Image src={sendSvg} alt='' />
@@ -91,7 +94,7 @@ function index() {
             </li>
           </ul>
           <Form />
-        </div>
+        </MotionUp>
       </div>
     </StyledContactSection>
   );
