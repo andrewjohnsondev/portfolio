@@ -147,12 +147,16 @@ select {
   overflow: hidden;
 }
 
+.front {
+  position: relative;
+  z-index: 99999999;
+}
 .fixed {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999999;
+  z-index: 9999;
 }
 
 .greenHover {

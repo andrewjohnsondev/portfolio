@@ -12,7 +12,7 @@ const StyledNavBar = styled.nav`
   background-color: ${({ bg }) => (bg ? 'rgba(36, 35, 35, 0.7)' : 'transparent')};
   box-shadow: ${({ bg }) => (bg ? 'rgba(29, 28, 28, 0.9) 0px 2px 14px' : 'none')};
   padding-block: 1.5rem;
-  z-index: 9999;
+  z-index: 99;
   transition: background-color 200ms ease;
 
   .nav {
