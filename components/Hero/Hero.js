@@ -50,7 +50,7 @@ const StyledHero = styled.section`
     align-items: center;
 
     h1 {
-      margin-top: 1rem;
+      margin-top: 2rem;
     }
 
     .button {
