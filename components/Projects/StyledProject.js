@@ -18,7 +18,7 @@ const StyledProject = styled.div`
 
     &__inner {
       &-feature {
-        color: var(--color-accent-400);
+        color: #cf9efc;
         font-size: 0.75rem;
         font-weight: var(--fw-500);
         text-transform: uppercase;
