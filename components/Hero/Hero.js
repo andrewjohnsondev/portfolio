@@ -7,14 +7,14 @@ import chevronImage from '../../public/assets/chevron.svg';
 import projectSvg from '../../public/assets/projects.svg';
 
 const StyledHero = styled.section`
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
   gap: 5rem;
   color: var(--color-neutral-100);
   position: relative;
   z-index: 9;
+  padding-top: 10vh;
 
   .hero {
     display: flex;
@@ -28,6 +28,7 @@ const StyledHero = styled.section`
     font-weight: var(--fw-900);
     rotate: -2deg;
     line-height: 1.2;
+    margin-top: 3rem;
 
     span {
       color: var(--color-primary-400);
@@ -47,7 +48,10 @@ const StyledHero = styled.section`
 
   @media (min-width: ${config.med}) {
     align-items: center;
-    margin-top: 0;
+
+    h1 {
+      margin-top: 0;
+    }
 
     .button {
       margin-top: 5rem;

@@ -147,6 +147,14 @@ select {
   overflow: hidden;
 }
 
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+}
+
 .greenHover {
   transition: color 200ms ease-in-out;
 
