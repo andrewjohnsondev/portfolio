@@ -126,6 +126,10 @@ select {
   }
 }
 
+.loaded {
+  visibility: visible;
+}
+
 .section {
   padding-block: 6rem;
 }

@@ -2,8 +2,18 @@ import GlobalStyles from '../styles/GlobalStyles';
 import { ToastContainer } from 'react-toastify';
 import ProgressBar from 'react-scroll-progress-bar';
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }) {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (loaded) document.body.classList.add('loaded');
+  }, [loaded]);
   return (
     <>
       <div className='front'>
