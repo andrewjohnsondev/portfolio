@@ -28,7 +28,7 @@ const StyledHero = styled.section`
     font-weight: var(--fw-900);
     rotate: -2deg;
     line-height: 1.2;
-    margin-top: 3rem;
+    margin-top: 4rem;
 
     span {
       color: var(--color-primary-400);
