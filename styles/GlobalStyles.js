@@ -127,7 +127,7 @@ select {
 }
 
 .loaded {
-  visibility: visible;
+  visibility: visible !important;
 }
 
 .section {
